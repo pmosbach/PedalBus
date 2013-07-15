@@ -26,5 +26,12 @@ namespace PedalBus.Controllers
 
             return View();
         }
+
+        public ActionResult Help()
+        {
+            ViewBag.Message = "I'm not sure there is any help for you.";
+
+            return View();
+        }
     }
 }
