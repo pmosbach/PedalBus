@@ -33,7 +33,10 @@
     </div>
 
     <div class="container">
-        @RenderBody()
+
+        <div id="pjaxContainer">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - The PedalBUS Experiment</p>
@@ -41,7 +44,15 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery.pjax")
     @Scripts.Render("~/bundles/bootstrap")    
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(function () {
+            //Initialize pjax
+            //$.pjax.defaults.timeout = 5000;
+            $(document).pjax('a','#pjaxContainer');
+        });
+    </script>
 </body>
 </html>
