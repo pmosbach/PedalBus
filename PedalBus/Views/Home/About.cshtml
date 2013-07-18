@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PedalBus.Models.Person
+@{
     ViewBag.Title = "About";
 }
 <hgroup>
@@ -7,6 +8,7 @@
 </hgroup>
 <div class="row-fluid">
     <div class="span12">
-        <p>Use this area to provide additional information. Here. Right here.</p>
+        <p>You are @Model.DisplayName. Here. Right here.</p>
+        <p>You have accounts on @Model.Accounts.Count MOD systems.</p>
     </div>
 </div>
