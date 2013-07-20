@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,8 +8,8 @@ namespace PedalBus.Models
 {
     public class Person
     {
+        [Key]
         public int ID { get; set; }
-        public enum DataSource : byte { PedalBus = 0, JSCNED = 1, NED = 2 }
         public string AUID { get; set; }
         public string Surname { get; set; }
         public string GivenName { get; set; }
