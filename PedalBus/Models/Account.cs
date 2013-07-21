@@ -8,11 +8,9 @@ namespace PedalBus.Models
 {
     public class Account
     {
-        [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int PersonId { get; set; }
         public int SystemId { get; set; }
-        public enum Domain : byte { OPS = 0, SNS = 1, NDC = 2, MC = 3, FD = 4, OTHER = 5 }
         public bool Active { get; set; }
         public string Login { get; set; }
         public int UID { get; set; }
@@ -24,7 +22,7 @@ namespace PedalBus.Models
         public string HomePath { get; set; }
         public string ProfilePath { get; set; }
         public string LogonScriptPath { get; set; }
-        public enum AccountPrivilege : byte { REGULAR = 0, PRIVILEGED = 1, GA = 2}
+        public AccountPrivilege Privilege { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string Comments { get; set; }
         public string LastAction { get; set; }
@@ -33,4 +31,6 @@ namespace PedalBus.Models
         public DateTime LastModified { get; set; }
         public ICollection<AccountGroup> Groups { get; set; }
     }
+
+    public enum AccountPrivilege { Regular, GA, Privileged }
 }

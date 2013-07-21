@@ -1,0 +1,287 @@
+@model IEnumerable<PedalBus.Models.Person>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AUID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GivenName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MailStop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bldg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.X500ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UUPIC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrgCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DomainID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Center)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.USCitizen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MultiCitizen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Citizenship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegalPermanentResident)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ForeignEmployer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuestionAnswer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITSecurityTrainingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITSecurityTrainingClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ACPRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ACPTTCPIdentifier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactInfoExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurveyExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManagerExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ITSecurityTrainingExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ACPTTCPExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastAction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastRemoteUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastRemoteAddr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastModified)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AUID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GivenName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailStop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bldg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.X500ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UUPIC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DomainID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Center)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.USCitizen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultiCitizen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Citizenship)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LegalPermanentResident)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ForeignEmployer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionAnswer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITSecurityTrainingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITSecurityTrainingClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACPRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACPTTCPIdentifier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactInfoExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SurveyExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITSecurityTrainingExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACPTTCPExpirationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastAction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastRemoteUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastRemoteAddr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModified)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

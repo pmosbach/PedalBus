@@ -118,8 +118,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountGroup.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Group.cs" />
     <Compile Include="Models\PedalBusDb.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\System.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +158,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Help.cshtml" />
     <Content Include="Views\Shared\_PjaxLayout.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
+    <Content Include="Views\Person\Delete.cshtml" />
+    <Content Include="Views\Person\Details.cshtml" />
+    <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

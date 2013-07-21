@@ -8,8 +8,7 @@ namespace PedalBus.Models
 {
     public class Person
     {
-        [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string AUID { get; set; }
         public string Surname { get; set; }
         public string GivenName { get; set; }
