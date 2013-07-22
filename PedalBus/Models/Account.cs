@@ -10,7 +10,7 @@ namespace PedalBus.Models
     {
         public int Id { get; set; }
         public int PersonId { get; set; }
-        public int SystemId { get; set; }
+        public int ApplicationId { get; set; }
         public bool Active { get; set; }
         public string Login { get; set; }
         public int UID { get; set; }

@@ -8,7 +8,7 @@ namespace PedalBus.Models
     public class Group
     {
         public int Id { get; set; }
-        public int SystemId { get; set; }
+        public int ApplicationId { get; set; }
         public string ShortName { get; set; }
         public string LongName { get; set; }
         public int GID { get; set; }

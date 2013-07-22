@@ -1,0 +1,127 @@
+@model PedalBus.Models.Application
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Application</legend>
+
+	<dl>
+		<dt>
+			@Html.DisplayNameFor(model => model.ShortName)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ShortName)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LongName)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LongName)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.AllowAdds)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.AllowAdds)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Advertise)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Advertise)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Description)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Description)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Phone)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Phone)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Email)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Email)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.PathToFile)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.PathToFile)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.URLPathToFile)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.URLPathToFile)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastAction)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastAction)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastRemoteUser)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastRemoteUser)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastRemoteAddr)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastRemoteAddr)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastModified)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastModified)
+		</dd>
+
+	</dl>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
