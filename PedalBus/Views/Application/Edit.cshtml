@@ -1,135 +1,122 @@
 @model PedalBus.Models.Application
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit System/Application";
 }
 
-<h2>Edit</h2>
+<h2>Edit System/Application</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset class="form-horizontal">
-        <legend>Application</legend>
+        <legend>System/Application Details</legend>
 
         @Html.HiddenFor(model => model.Id)
 
         <div class="control-group">
             @Html.LabelFor(model => model.ShortName, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.ShortName)
-				@Html.ValidationMessageFor(model => model.ShortName, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.ShortName)
+                @Html.ValidationMessageFor(model => model.ShortName, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.LongName, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.LongName)
-				@Html.ValidationMessageFor(model => model.LongName, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.LongName)
+                @Html.ValidationMessageFor(model => model.LongName, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.AllowAdds, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.AllowAdds)
-				@Html.ValidationMessageFor(model => model.AllowAdds, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.AllowAdds)
+                @Html.ValidationMessageFor(model => model.AllowAdds, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.Advertise, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.Advertise)
-				@Html.ValidationMessageFor(model => model.Advertise, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.Advertise)
+                @Html.ValidationMessageFor(model => model.Advertise, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Domain, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Domain)
+                @Html.ValidationMessageFor(model => model.Domain, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Type, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Categorization, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Categorization)
+                @Html.ValidationMessageFor(model => model.Categorization, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Class, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Class)
+                @Html.ValidationMessageFor(model => model.Class, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.Description, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.Description)
-				@Html.ValidationMessageFor(model => model.Description, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.Phone, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.Phone)
-				@Html.ValidationMessageFor(model => model.Phone, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="control-group">
             @Html.LabelFor(model => model.Email, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.Email)
-				@Html.ValidationMessageFor(model => model.Email, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.PathToFile, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.PathToFile)
-				@Html.ValidationMessageFor(model => model.PathToFile, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.URLPathToFile, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.URLPathToFile)
-				@Html.ValidationMessageFor(model => model.URLPathToFile, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.LastAction, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.LastAction)
-				@Html.ValidationMessageFor(model => model.LastAction, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.LastRemoteUser, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.LastRemoteUser)
-				@Html.ValidationMessageFor(model => model.LastRemoteUser, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.LastRemoteAddr, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.LastRemoteAddr)
-				@Html.ValidationMessageFor(model => model.LastRemoteAddr, null, new { @class = "help-inline" })
-			</div>
-		</div>
-
-        <div class="control-group">
-            @Html.LabelFor(model => model.LastModified, new { @class = "control-label" })
-			<div class="controls">
-				@Html.EditorFor(model => model.LastModified)
-				@Html.ValidationMessageFor(model => model.LastModified, null, new { @class = "help-inline" })
-			</div>
-		</div>
+            <div class="controls">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "help-inline" })
+            </div>
+        </div>
 
         <div class="form-actions no-color">
             <input type="submit" value="Save" class="btn" />
         </div>
     </fieldset>
 }
+<h4>Groups for @Model.LongName</h4>
+@Html.Partial("_Groups", Model.Groups)
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 

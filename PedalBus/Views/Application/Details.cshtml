@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Model.LongName</h2>
 
 <fieldset>
-	<legend>Application</legend>
+	<legend>Details</legend>
 	<dl>
 		<dt>
 			@Html.DisplayNameFor(model => model.ShortName)
@@ -115,6 +115,8 @@
 
 	</dl>
 </fieldset>
+<h4>Groups</h4>
+@Html.Partial("_Groups", Model.Groups)
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

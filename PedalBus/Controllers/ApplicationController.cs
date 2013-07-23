@@ -95,6 +95,10 @@ namespace PedalBus.Controllers
         {
             if (ModelState.IsValid)
             {
+                application.LastAction = "Application Modified";
+                application.LastRemoteUser = User.Identity.Name;
+                application.LastRemoteAddr = Request.UserHostAddress;
+                application.LastModified = DateTime.Now;
                 db.Entry(application).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
