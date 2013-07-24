@@ -1,14 +1,205 @@
 ﻿@model PedalBus.Models.Person
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "All About Me";
 }
 <hgroup>
-    <h2>@ViewBag.Title.</h2>
+    <h2>@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
 </hgroup>
 <div class="row-fluid">
     <div class="span12">
         <p>You are @Model.DisplayName. Here. Right here.</p>
-        <p>You have accounts on 0 MOD systems.</p>
+        <p>You have accounts on @Model.Accounts.Count MOD systems.</p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Contact Information</h3>
+        <p>If you need to submit or update your contact information, click here.</p>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">First Name (Given Name)</div>
+    <div class="span9">@Model.GivenName</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Middle Name (or Initial)</div>
+    <div class="span9">@Model.MiddleName</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Last Name (Surname)</div>
+    <div class="span9">@Model.Surname</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Email Address</div>
+    <div class="span9"><a href="mailto:@Model.EmailAddress">@Model.EmailAddress</a></div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Employer</div>
+    <div class="span9">@Model.Employer</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Org Code</div>
+    <div class="span9">@Model.OrgCode</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Mail Stop</div>
+    <div class="span9">@Model.MailStop</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Building</div>
+    <div class="span9">@Model.Bldg</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Room</div>
+    <div class="span9">@Model.Room</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Phone</div>
+    <div class="span9">@Model.Phone</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Mobile</div>
+    <div class="span9">@Model.Mobile</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Center</div>
+    <div class="span9">@Model.Center</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Address</div>
+    <div class="span9">@Model.Address</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">State</div>
+    <div class="span9">@Model.State</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Postal Code</div>
+    <div class="span9">@Model.PostalCode</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">PedalBus Id</div>
+    <div class="span9">@Model.Id</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">UUPIC</div>
+    <div class="span9">@Model.UUPIC</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Legacy Unique Id (X.500 Id)</div>
+    <div class="span9">@Model.X500ID</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Domain Id</div>
+    <div class="span9">@Model.DomainID</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">AUID</div>
+    <div class="span9">@Model.AUID</div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Manager Information</h3>
+        <p>Pbob Ptolemy is your manager. If this is not correct or you need to re-verify this information, click here. Your manager has an active PedalBus role and can dispose requests.</p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Background Survey</h3>
+        <p>If you need to submit or update your background survey information, click here.</p>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span3">US Citizen</div>
+    <div class="span9">@Model.USCitizen</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Citizenship</div>
+    <div class="span9">@Model.Citizenship</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Birth Country</div>
+    <div class="span9">@Model.BirthCountry</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Legal Permanent Resident</div>
+    <div class="span9">@Model.LegalPermanentResident</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Foreign Employer</div>
+    <div class="span9">@Model.ForeignEmployer</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Secret Question</div>
+    <div class="span9">@Model.Question</div>
+</div>
+<div class="row-fluid">
+    <div class="span3">Secret Answer</div>
+    <div class="span9">@Model.QuestionAnswer</div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>IT Security Training</h3>
+        <p>Our records indicate you last took IT Security Training (@Model.ITSecurityTrainingClass) on @Model.ITSecurityTrainingDate. If this is not correct or you need to update this information, click here. Your training is current until @Model.ITSecurityTrainingExpirationDate.</p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Technology Transfer Control Plan (TTCP) or Access Control Plan (ACP)</h3>
+        <p>You do not have an ACP number or TTCP designator on file. If you need to update this information, click here.</p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Applications/Systems, Groups, and Accounts</h3>
+        <p>Listed below are the applications/systems, groups, and corresponding accounts that are in your name. If you need to make any adjustments, click here. Refer to the key below on account status. Login name is denoted as (login name) and days left before account must be revalidated is denoted as [number of days].</p>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span2 offset1">Revalidation Status</div>
+    <div class="span2 offset1">Account Status</div>
+</div>
+<div class="row-fluid">
+    <div class="span2 offset1"><i class="icon-star-empty"></i>&nbsp;Current (Good)</div>
+    <div class="span2 offset1"><i class="icon-ok"></i>&nbsp;Active</div>
+</div>
+<div class="row-fluid">
+    <div class="span2 offset1"><i class="icon-bell"></i>&nbsp;Borderline (Marginal)</div>
+    <div class="span2 offset1"><i class="icon-remove"></i>&nbsp;Inactive</div>
+</div>
+<div class="row-fluid">
+    <div class="span2 offset1"><i class="icon-exclamation-sign"></i>&nbsp;Expired (Bad)</div>
+    <div class="span2 offset1"><i class="icon-lock"></i>&nbsp;Locked</div>
+</div>
+<div class="row-fluid">
+    <div class="span12"><i class="icon-user"></i>&nbsp;@Model.DisplayName</div>
+</div>
+@foreach (var item in Model.Accounts)
+{
+    <div class="row-fluid">
+        <div class="span11 offset1">
+            <i class="icon-hdd"></i>&nbsp;@Html.DisplayFor(modelItem => item.ApplicationId) [email address of admin]
+        </div>
+        @foreach (var group in item.Groups)
+        {
+            <div class="span10 offset2">
+                @Html.Raw(item.ExpirationDate < DateTime.Now ? "<i class='icon-exclamation-sign'></i>" : (item.ExpirationDate < DateTimeOffset.Now.AddDays(30) ? "<i class='icon-bell'></i>" : "<i class='icon-star-empty'></i>"))
+                @Html.DisplayFor(modelItem => group.GroupId) (@Html.DisplayFor(modelItem => item.Login)) [@item.ExpirationDate.Subtract(DateTime.Now).Days] [@item.Privilege]
+            </div>
+        }
+    </div>
+}
+
+<div class="row-fluid">
+    <div class="span12">
+        <h3>Access Request Traffic</h3>
+        <p>Listed below are all access requests that are associated with you.</p>
     </div>
 </div>

@@ -51,6 +51,6 @@ namespace PedalBus.Models
         public string LastRemoteUser { get; set; }
         public string LastRemoteAddr { get; set; }
         public DateTime LastModified { get; set; }
-        public ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
     }
 }

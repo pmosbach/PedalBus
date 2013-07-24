@@ -18,7 +18,7 @@ namespace PedalBus.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "All your vital information.";
+            ViewBag.Message = "All your Vital Information";
 
             var model = _db.People.Where(a => a.DomainID == User.Identity.Name).SingleOrDefault();
 

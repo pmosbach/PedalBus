@@ -48,15 +48,16 @@ namespace PedalBus.Models
 
     public enum LDAPDomain
     {
+        [Display(Name = "Legacy OPS")]
         OPS,
         SNS,
         NDC,
-        [Display(Name="MCC21 Critical")]
+        [Display(Name = "MCC21 Critical")]
         MC,
-        [Display(Name="MSSC")]
+        [Display(Name = "MSSC")]
         FD,
         LAUNCHPAD,
-        [Display(Name="Other")]
+        [Display(Name = "Other")]
         OTHER
     }
 
@@ -64,7 +65,7 @@ namespace PedalBus.Models
     {
         Pseudo,
         Windows,
-        [Display(Name="Linux-Unix")]
+        [Display(Name = "Linux-Unix")]
         LinuxUnix
     }
 

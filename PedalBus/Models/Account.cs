@@ -29,7 +29,7 @@ namespace PedalBus.Models
         public string LastRemoteUser { get; set; }
         public string LastRemoteAddr { get; set; }
         public DateTime LastModified { get; set; }
-        public ICollection<AccountGroup> Groups { get; set; }
+        public virtual ICollection<AccountGroup> Groups { get; set; }
     }
 
     public enum AccountPrivilege { Regular, GA, Privileged }
