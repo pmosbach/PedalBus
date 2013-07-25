@@ -171,6 +171,8 @@
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Application\_Groups.cshtml" />
+    <Content Include="Views\Shared\_ContactInformation.cshtml" />
+    <Content Include="Views\Shared\_AccountInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

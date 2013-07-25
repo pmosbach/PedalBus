@@ -13,6 +13,8 @@ namespace PedalBus.Controllers
     {
         private PedalBusDb db = new PedalBusDb();
 
+        // TODO: Explore ChildActionOnly annotation
+
         //
         // GET: /Application/
         public ActionResult Index()
@@ -91,6 +93,7 @@ namespace PedalBus.Controllers
         // POST: /Application/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        // TODO: Add Mass Assignment prevention to all Post actions that take user input through either Binding with a whitelist or a ViewModel for user input.
         public ActionResult Edit(Application application)
         {
             if (ModelState.IsValid)
@@ -128,6 +131,14 @@ namespace PedalBus.Controllers
             db.Applications.Remove(application);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // Experimental Helper Method
+        [ChildActionOnly]
+        public ActionResult GetApplicationName(Int32 id)
+        {
+            var query = db.Applications.Where(r => r.Id == id).First();
+            return Content(query.LongName);
         }
 
         protected override void Dispose(bool disposing)
