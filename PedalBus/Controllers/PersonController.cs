@@ -83,6 +83,60 @@ namespace PedalBus.Controllers
         }
 
         //
+        // GET: /Person/EditContactInformation
+        public ActionResult EditContactInformation()
+        {
+            Person person = db.People.Where(a => a.DomainID == User.Identity.Name).SingleOrDefault();
+            if (person == null)
+            {
+                return HttpNotFound();
+            }
+            return View(person);
+        }
+
+        //
+        // POST: /Person/EditContactInformation
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditContactInformation(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(person).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(person);
+        }
+
+        //
+        // GET: /Person/EditBackgroundSurvey
+        public ActionResult EditBackgroundSurvey()
+        {
+            Person person = db.People.Where(a => a.DomainID == User.Identity.Name).SingleOrDefault();
+            if (person == null)
+            {
+                return HttpNotFound();
+            }
+            return View(person);
+        }
+
+        //
+        // POST: /Person/EditBackgroundSurvey
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditBackgroundSurvey(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(person).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(person);
+        }
+
+        //
         // GET: /Person/Delete/5
         public ActionResult Delete(Int32 id)
         {

@@ -1,0 +1,103 @@
+@model PedalBus.Models.Person
+
+@{
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Background Survey</title>
+</head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset class="form-horizontal">
+            <legend>Background Survey</legend>
+            <p>
+                The information contained in this short survey is used to assess whether any additional verification is necessary
+                to grant access to BUS information systems because of citizenship, background, or export control restrictions.
+                All users must answer all questions in order to be granted access to any BUS system, regardless of nationality or
+                citizenship. Through the collection of this data, appropriate legal and regulatory compliance can be assured. You
+                may update this information at any time.
+            </p>
+
+            <h3>Citizenship Status</h3>
+            <div class="control-group">
+                @Html.LabelFor(model => model.USCitizen, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.DisplayFor(model => model.USCitizen)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.MultiCitizen, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.MultiCitizen)
+                    @Html.ValidationMessageFor(model => model.MultiCitizen, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Citizenship, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Citizenship)
+                    @Html.ValidationMessageFor(model => model.Citizenship, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.BirthCountry, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.BirthCountry)
+                    @Html.ValidationMessageFor(model => model.BirthCountry, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <h3>Legal Permanent Resident Status</h3>
+            <div class="control-group">
+                @Html.LabelFor(model => model.LegalPermanentResident, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.LegalPermanentResident)
+                    @Html.ValidationMessageFor(model => model.LegalPermanentResident, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <h3>Foreign Employer Status</h3>
+            <div class="control-group">
+                @Html.LabelFor(model => model.ForeignEmployer, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.ForeignEmployer)
+                    @Html.ValidationMessageFor(model => model.ForeignEmployer, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <h3>Secret Question</h3>
+            <div class="control-group">
+                @Html.LabelFor(model => model.Question, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Question)
+                    @Html.ValidationMessageFor(model => model.Question, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.QuestionAnswer, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.QuestionAnswer)
+                    @Html.ValidationMessageFor(model => model.QuestionAnswer, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Save" class="btn" />
+            </div>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>

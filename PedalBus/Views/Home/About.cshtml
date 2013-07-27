@@ -13,13 +13,12 @@
     </div>
 </div>
 
-<div class="row-fluid">
-    <div class="span12">
+<a href="@Url.Action("EditContactInformation", "Person")" class="row-fluid">
+    <div class=" span12">
         <h3>Contact Information</h3>
         <p>If you need to submit or update your contact information, click here.</p>
     </div>
-</div>
-
+</a>
 @Html.Partial("_ContactInformation", Model)
 
 <div class="row-fluid">
@@ -32,37 +31,10 @@
 <div class="row-fluid">
     <div class="span12">
         <h3>Background Survey</h3>
-        <p>If you need to submit or update your background survey information, click here.</p>
+        <p>If you need to submit or update your background survey information, click <a href="@Url.Action("EditBackgroundSurvey", "Person")">here</a>.</p>
     </div>
 </div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.USCitizen)</div>
-    <div class="span9">@Model.USCitizen</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.Citizenship)</div>
-    <div class="span9">@Model.Citizenship</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.BirthCountry)</div>
-    <div class="span9">@Model.BirthCountry</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.LegalPermanentResident)</div>
-    <div class="span9">@Model.LegalPermanentResident</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.ForeignEmployer)</div>
-    <div class="span9">@Model.ForeignEmployer</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.Question)</div>
-    <div class="span9">@Model.Question</div>
-</div>
-<div class="row-fluid">
-    <div class="span3">@Html.DisplayNameFor(model => model.QuestionAnswer)</div>
-    <div class="span9">@Model.QuestionAnswer</div>
-</div>
+@Html.Partial("_BackgroundSurvey", Model)
 
 <div class="row-fluid">
     <div class="span12">

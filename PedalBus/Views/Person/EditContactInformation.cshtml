@@ -1,0 +1,157 @@
+@model PedalBus.Models.Person
+
+@{
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Contact Information</title>
+</head>
+<body>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset class="form-horizontal">
+            <legend>Contact Information</legend>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.GivenName, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.GivenName)
+                    @Html.ValidationMessageFor(model => model.GivenName, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.MiddleName, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.MiddleName)
+                    @Html.ValidationMessageFor(model => model.MiddleName, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Surname, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Surname)
+                    @Html.ValidationMessageFor(model => model.Surname, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.EmailAddress, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.EmailAddress)
+                    @Html.ValidationMessageFor(model => model.EmailAddress, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Employer, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Employer)
+                    @Html.ValidationMessageFor(model => model.Employer, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.OrgCode, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.OrgCode)
+                    @Html.ValidationMessageFor(model => model.OrgCode, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.MailStop, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.MailStop)
+                    @Html.ValidationMessageFor(model => model.MailStop, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Bldg, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Bldg)
+                    @Html.ValidationMessageFor(model => model.Bldg, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Room, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Room)
+                    @Html.ValidationMessageFor(model => model.Room, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Phone, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Mobile, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Mobile)
+                    @Html.ValidationMessageFor(model => model.Mobile, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.AUID, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.AUID)
+                    @Html.ValidationMessageFor(model => model.AUID, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Center, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Center)
+                    @Html.ValidationMessageFor(model => model.Center, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.Address, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.State, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.State)
+                    @Html.ValidationMessageFor(model => model.State, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.PostalCode, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.PostalCode)
+                    @Html.ValidationMessageFor(model => model.PostalCode, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Save" class="btn" />
+            </div>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
