@@ -1,0 +1,93 @@
+@model IEnumerable<PedalBus.Models.Group>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LongName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Advertise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pseudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Privileged)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastAction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastRemoteUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastRemoteAddr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModified)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LongName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Advertise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pseudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Privileged)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastAction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastRemoteUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastRemoteAddr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModified)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

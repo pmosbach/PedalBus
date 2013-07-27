@@ -1,2 +1,14 @@
 @model PedalBus.Models.Account
 
+<div class="row-fluid">
+    <div class="span11 offset1">
+        <i class="icon-hdd"></i>&nbsp;@Html.Action("GetApplicationName", "Application", new { id = Model.ApplicationId }) [email address of admin]
+    </div>
+    @foreach (var group in Model.Groups)
+    {
+        <div class="span10 offset2">
+            @Html.Raw(Model.ExpirationDate < DateTime.Now ? "<i class='icon-exclamation-sign'></i>" : (Model.ExpirationDate < DateTimeOffset.Now.AddDays(30) ? "<i class='icon-bell'></i>" : "<i class='icon-star-empty'></i>"))
+            @Html.Action("GetGroupName", "Group", new { id = group.GroupId }) (@Html.DisplayFor(modelItem => Model.Login)) [@Model.ExpirationDate.Subtract(DateTime.Now).Days] [@Model.Privilege]
+        </div>
+    }
+</div>

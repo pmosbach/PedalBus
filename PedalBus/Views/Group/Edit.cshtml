@@ -1,0 +1,119 @@
+@model PedalBus.Models.Group
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Group</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ApplicationId, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.ApplicationId)
+				@Html.ValidationMessageFor(model => model.ApplicationId, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ShortName, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.ShortName)
+				@Html.ValidationMessageFor(model => model.ShortName, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LongName, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LongName)
+				@Html.ValidationMessageFor(model => model.LongName, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.GID, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.GID)
+				@Html.ValidationMessageFor(model => model.GID, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Advertise, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.Advertise)
+				@Html.ValidationMessageFor(model => model.Advertise, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Pseudo, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.Pseudo)
+				@Html.ValidationMessageFor(model => model.Pseudo, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Privileged, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.Privileged)
+				@Html.ValidationMessageFor(model => model.Privileged, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LastAction, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LastAction)
+				@Html.ValidationMessageFor(model => model.LastAction, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LastRemoteUser, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LastRemoteUser)
+				@Html.ValidationMessageFor(model => model.LastRemoteUser, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LastRemoteAddr, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LastRemoteAddr)
+				@Html.ValidationMessageFor(model => model.LastRemoteAddr, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LastModified, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LastModified)
+				@Html.ValidationMessageFor(model => model.LastModified, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

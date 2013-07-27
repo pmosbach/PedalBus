@@ -105,18 +105,7 @@
 </div>
 @foreach (var item in Model.Accounts)
 {
-    <div class="row-fluid">
-        <div class="span11 offset1">
-            <i class="icon-hdd"></i>&nbsp;@Html.Action("GetApplicationName", "Application", new { id = item.ApplicationId }) [email address of admin]
-        </div>
-        @foreach (var group in item.Groups)
-        {
-            <div class="span10 offset2">
-                @Html.Raw(item.ExpirationDate < DateTime.Now ? "<i class='icon-exclamation-sign'></i>" : (item.ExpirationDate < DateTimeOffset.Now.AddDays(30) ? "<i class='icon-bell'></i>" : "<i class='icon-star-empty'></i>"))
-                @Html.DisplayFor(modelItem => group.GroupId) (@Html.DisplayFor(modelItem => item.Login)) [@item.ExpirationDate.Subtract(DateTime.Now).Days] [@item.Privilege]
-            </div>
-        }
-    </div>
+    @Html.Partial("_AccountInformation", item)
 }
 
 <div class="row-fluid">
