@@ -110,12 +110,13 @@
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201307192037538_InitialCreate.cs" />
-    <Compile Include="Migrations\201307192037538_InitialCreate.Designer.cs">
-      <DependentUpon>201307192037538_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201307280523502_Initial.cs" />
+    <Compile Include="Migrations\201307280523502_Initial.Designer.cs">
+      <DependentUpon>201307280523502_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountGroup.cs" />
@@ -184,6 +185,11 @@
     <Content Include="Views\Person\EditContactInformation.cshtml" />
     <Content Include="Views\Person\EditBackgroundSurvey.cshtml" />
     <Content Include="Views\Shared\_BackgroundSurvey.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -192,8 +198,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201307192037538_InitialCreate.resx">
-      <DependentUpon>201307192037538_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201307280523502_Initial.resx">
+      <DependentUpon>201307280523502_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

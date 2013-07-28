@@ -1,0 +1,89 @@
+@model PedalBus.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+	<legend>Role</legend>
+	<dl>
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Description)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Description)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Comments)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Comments)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Active)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Active)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Verified)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Verified)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastAction)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastAction)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastRemoteUser)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastRemoteUser)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastRemoteAddr)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastRemoteAddr)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LastModified)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LastModified)
+		</dd>
+
+	</dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
