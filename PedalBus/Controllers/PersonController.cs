@@ -95,6 +95,7 @@ namespace PedalBus.Controllers
         }
 
         //
+        // TODO: Experiment with pjax.submit
         // POST: /Person/EditContactInformation
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -126,6 +127,33 @@ namespace PedalBus.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditBackgroundSurvey(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(person).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(person);
+        }
+
+        //
+        // GET: /Person/EditManager
+        public ActionResult EditManager()
+        {
+            Person person = db.People.Where(a => a.DomainID == User.Identity.Name).SingleOrDefault();
+            if (person == null)
+            {
+                return HttpNotFound();
+            }
+            return View(person);
+        }
+
+        //
+        // POST: /Person/EditManager
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditManager(Person person)
         {
             if (ModelState.IsValid)
             {

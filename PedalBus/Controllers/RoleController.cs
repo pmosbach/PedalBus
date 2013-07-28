@@ -110,7 +110,8 @@ namespace PedalBus.Controllers
         [ChildActionOnly]
         public ActionResult GetNameOfPrime(Int32 id)
         {
-            var query = db.People.Where(r => r.Id == id).First();
+            var rolequery = db.PeopleRoles.Where(r => r.RoleId == id && r.Prime == true).First();
+            var query = db.People.Where(r => r.Id == rolequery.PersonId).First();
             return Content(query.DisplayName);
         }
 

@@ -24,7 +24,7 @@
 <div class="row-fluid">
     <div class="span12">
         <h3>Manager Information</h3>
-        <p>Pbob Ptolemy is your manager. If this is not correct or you need to re-verify this information, click here. Your manager has an active PedalBus role and can dispose requests.</p>
+        <p>@Html.Action("GetNameOfPrime", "Role", new { id = Model.ManagerRoleId }) is your manager. If this is not correct or you need to re-verify this information, click here. Your manager has an active PedalBus role and can dispose requests.</p>
     </div>
 </div>
 
