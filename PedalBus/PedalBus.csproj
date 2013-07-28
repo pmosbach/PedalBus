@@ -124,6 +124,8 @@
     <Compile Include="Models\PedalBusDb.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\PersonRole.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

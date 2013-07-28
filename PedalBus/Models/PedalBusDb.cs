@@ -11,7 +11,7 @@ namespace PedalBus.Models
         public DbSet<Person> People { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Application> Applications { get; set; }
-
-        public DbSet<PedalBus.Models.Group> Groups { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }

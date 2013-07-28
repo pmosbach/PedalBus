@@ -65,6 +65,7 @@ namespace PedalBus.Models
         public bool ACPRequired { get; set; }
         [Display(Name = "ACP/TTCP Identifier")]
         public string ACPTTCPIdentifier { get; set; }
+        public int ManagerRoleId { get; set; }
         public DateTime ContactInfoExpirationDate { get; set; }
         public DateTime SurveyExpirationDate { get; set; }
         public DateTime ManagerExpirationDate { get; set; }
@@ -75,5 +76,6 @@ namespace PedalBus.Models
         public string LastRemoteAddr { get; set; }
         public DateTime LastModified { get; set; }
         public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<PersonRole> Roles { get; set; }
     }
 }
