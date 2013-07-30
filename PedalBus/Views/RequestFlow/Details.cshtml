@@ -1,0 +1,97 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+	<legend>RequestFlow</legend>
+	<dl>
+		<dt>
+			@Html.DisplayNameFor(model => model.RequestorId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.RequestorId)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.SubmitterId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.SubmitterId)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.RequestClass)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.RequestClass)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.FurthestStep)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.FurthestStep)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.AgreedToSOR)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.AgreedToSOR)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.RequestPrivileged)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.RequestPrivileged)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ChangedEmployer)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ChangedEmployer)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.ChangedName)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.ChangedName)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.MatchingPersonId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.MatchingPersonId)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.LocalityFilter)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.LocalityFilter)
+		</dd>
+
+	</dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

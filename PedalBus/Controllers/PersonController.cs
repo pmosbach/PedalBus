@@ -188,6 +188,13 @@ namespace PedalBus.Controllers
             return RedirectToAction("Index");
         }
 
+        // Experimental Weird Partial View Helper Method
+        public ActionResult GetPeopleWithMatchingSurnames(string surname)
+        {
+            var PeopleList = db.People.Where(r => r.Surname.StartsWith(surname)).ToList();
+            return PartialView("_PeopleSelector",PeopleList);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

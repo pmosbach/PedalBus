@@ -14,5 +14,7 @@ namespace PedalBus.Models
         public DbSet<Group> Groups { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<PersonRole> PeopleRoles { get; set; }
+
+        public DbSet<PedalBus.Models.RequestFlow> RequestFlows { get; set; }
     }
 }

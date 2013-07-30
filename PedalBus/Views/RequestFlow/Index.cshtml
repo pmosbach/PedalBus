@@ -1,0 +1,87 @@
+@model IEnumerable<PedalBus.Models.RequestFlow>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmitterId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FurthestStep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgreedToSOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequestPrivileged)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangedEmployer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangedName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MatchingPersonId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocalityFilter)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmitterId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FurthestStep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgreedToSOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestPrivileged)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChangedEmployer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChangedName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatchingPersonId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocalityFilter)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

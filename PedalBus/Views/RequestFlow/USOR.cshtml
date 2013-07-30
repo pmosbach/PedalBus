@@ -1,0 +1,48 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "User Statement of Responsibility";
+    //TODO: Make the checkbox required
+}
+
+<h2>User Statement of Responsibility</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-inline">
+        <legend>User Statement of Responsibility</legend>
+
+        <p>I do solemnly swear that I will uphold the duties that fall to me if the first runner-up is unable to to fulfill her duties if the winner is unable to fulfill her duties.</p>
+
+        <p>The first runner-up is a B anyway.</p>
+
+        <p>I also promise to hunt down anyone who loves Comic Sans.</p>
+
+        <p>This paragraph makes the page longer.</p>
+
+        <p>Why didn't I just find an interesting Lorem Ipsum generator?</p>
+
+        <div class="row">
+            <div class="span2.5">
+                @Html.LabelFor(model => model.AgreedToUSOR, "Check to denote electronic signature", new { @class = "control-label" })
+            </div>
+            <div class="span1">
+                @Html.EditorFor(model => model.AgreedToUSOR)
+                @Html.ValidationMessageFor(model => model.AgreedToUSOR, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <a class="btn" href="@Url.Action("StartNewRequest")">Back</a>
+            <button type="submit" value="Next" class="btn">Next</button>
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

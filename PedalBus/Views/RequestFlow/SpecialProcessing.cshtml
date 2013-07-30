@@ -1,0 +1,55 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "Special Processing";
+    // TODO: Does that back button actually work properly?
+}
+
+<h2>Special Processing</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-vertical">
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.RequestPrivileged, new { @class = "control-label" })
+			<div class="controls">
+                @Html.RadioButton("RequestPrivileged", Model.RequestPrivileged) Yes, I will be requesting privileged access.
+                @Html.RadioButton("RequestPrivileged", !Model.RequestPrivileged, true) No. I don't even know what privileged access is.
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ChangedEmployer, new { @class = "control-label" })
+			<div class="controls">
+				@Html.RadioButton("ChangedEmployer", Model.ChangedEmployer) Yes, I have changed my employer in the past year.
+                @Html.RadioButton("ChangedEmployer", !Model.ChangedEmployer, true) No, I have not changed my employer in the past year.
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ChangedName, new { @class = "control-label" })
+			<div class="controls">
+				@Html.RadioButton("ChangedName", Model.ChangedName) Yes, I have changed my legal name in the past year.
+                @Html.RadioButton("ChangedName", !Model.ChangedName, true) No, I have not changed my legal name in the past year.
+			</div>
+		</div>
+
+        <div class="form-actions no-color">
+            <a class="btn" href="@Url.Action("USOR")">Back</a>
+            <button type="submit" value="Next" class="btn">Next</button>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,16 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "Start New Request";
+}
+
+<h2>Start New Request</h2>
+
+<p>The request process is SUPER easy.</p>
+
+<p>Click @Html.ActionLink("here", "EditContactInformation", "Person") to update this thing.</p>
+
+<p>Click @Html.ActionLink("here", "EditBackgroundSurvey", "Person") to update the other thing.</p>
+
+<p><a class="btn" href="@Url.Action("USOR")">Start &raquo;</a></p>
+

@@ -1,0 +1,110 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>RequestFlow</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.RequestorId, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.RequestorId)
+				@Html.ValidationMessageFor(model => model.RequestorId, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.SubmitterId, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.SubmitterId)
+				@Html.ValidationMessageFor(model => model.SubmitterId, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.RequestClass, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.RequestClass)
+				@Html.ValidationMessageFor(model => model.RequestClass, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.FurthestStep, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.FurthestStep)
+				@Html.ValidationMessageFor(model => model.FurthestStep, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.AgreedToSOR, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.AgreedToSOR)
+				@Html.ValidationMessageFor(model => model.AgreedToSOR, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.RequestPrivileged, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.RequestPrivileged)
+				@Html.ValidationMessageFor(model => model.RequestPrivileged, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ChangedEmployer, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.ChangedEmployer)
+				@Html.ValidationMessageFor(model => model.ChangedEmployer, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ChangedName, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.ChangedName)
+				@Html.ValidationMessageFor(model => model.ChangedName, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.MatchingPersonId, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.MatchingPersonId)
+				@Html.ValidationMessageFor(model => model.MatchingPersonId, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.LocalityFilter, new { @class = "control-label" })
+			<div class="controls">
+				@Html.EditorFor(model => model.LocalityFilter)
+				@Html.ValidationMessageFor(model => model.LocalityFilter, null, new { @class = "help-inline" })
+			</div>
+		</div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

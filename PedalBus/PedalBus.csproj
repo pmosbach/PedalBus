@@ -110,6 +110,7 @@
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\RequestFlowController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -150,6 +151,7 @@
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery.pjax.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\pedalBus.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -194,6 +196,16 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\RequestFlow\Create.cshtml" />
+    <Content Include="Views\RequestFlow\Delete.cshtml" />
+    <Content Include="Views\RequestFlow\Details.cshtml" />
+    <Content Include="Views\RequestFlow\Edit.cshtml" />
+    <Content Include="Views\RequestFlow\Index.cshtml" />
+    <Content Include="Views\RequestFlow\StartNewRequest.cshtml" />
+    <Content Include="Views\RequestFlow\USOR.cshtml" />
+    <Content Include="Views\RequestFlow\SpecialProcessing.cshtml" />
+    <Content Include="Views\RequestFlow\ProfileMatching.cshtml" />
+    <Content Include="Views\Shared\_PeopleSelector.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
