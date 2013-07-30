@@ -8,6 +8,11 @@ namespace PedalBus.Models
 {
     public class PedalBusDb : DbContext
     {
+        public PedalBusDb() : base("name=DefaultConnection")
+        {
+
+        }
+
         public DbSet<Person> People { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Application> Applications { get; set; }

@@ -6,16 +6,22 @@ namespace PedalBus.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WebMatrix.WebData;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PedalBus.Models.PedalBusDb>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PedalBus.Models.PedalBusDb context)
         {
+            if (!WebSecurity.Initialized)
+            {
+                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            }
+
             context.Applications.AddOrUpdate(r => r.ShortName,
                 new Application
                 {
@@ -143,7 +149,7 @@ namespace PedalBus.Migrations
                     Bldg = "1",
                     Room = "102",
                     Phone = "281-555-1111",
-                    DomainID = "FAT-MAN\\Lucy",
+                    DomainID = "MOSBACHERHOME\\pmosbach",
                     AUID = "Lucy",
                     USCitizen = true,
                     Citizenship = "US",
@@ -241,7 +247,7 @@ namespace PedalBus.Migrations
                     Bldg = "1",
                     Room = "Corner Suite",
                     Phone = "281-555-4321",
-                    DomainID = "FAT-MAN\\Sherlock",
+                    DomainID = "MOSBACHERHOME\\stremper",
                     AUID = "Sherlock",
                     USCitizen = true,
                     Citizenship = "US",
@@ -351,7 +357,7 @@ namespace PedalBus.Migrations
                     Bldg = "1",
                     Room = "The Big Office",
                     Phone = "281-555-7777",
-                    DomainID = "FAT-MAN\\Rolph",
+                    DomainID = "MOSBACHERHOME\\rmaccabe",
                     AUID = "Rolph",
                     USCitizen = true,
                     Citizenship = "US",
@@ -449,7 +455,7 @@ namespace PedalBus.Migrations
                     Bldg = "1",
                     Room = "103",
                     Phone = "281-555-8888",
-                    DomainID = "FAT-MAN\\Lula",
+                    DomainID = "MOSBACHERHOME\\lbanana",
                     AUID = "Lula",
                     USCitizen = true,
                     Citizenship = "US",
@@ -547,7 +553,7 @@ namespace PedalBus.Migrations
                     Bldg = "1",
                     Room = "104",
                     Phone = "281-555-0000",
-                    DomainID = "FAT-MAN\\Bean",
+                    DomainID = "MOSBACHERHOME\\bycallah",
                     AUID = "Bean",
                     USCitizen = true,
                     Citizenship = "US",
