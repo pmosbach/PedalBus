@@ -154,6 +154,40 @@ namespace PedalBus.Controllers
         public ActionResult ApplicationSelection(Int32 id)
         {
             RequestFlow requestflow = db.RequestFlows.Find(id);
+            var TheApplications = db.Applications.ToList();
+            var TheAccounts = db.Accounts.Where(a => a.PersonId == requestflow.RequestorId).ToList();
+            var TheMatchingAccounts = new List<Account>();
+            if (requestflow.MatchingPersonId != requestflow.RequestorId)
+            {
+                TheMatchingAccounts = db.Accounts.Where(a => a.PersonId == requestflow.MatchingPersonId).ToList();
+            }
+            List<RequestedApplication> RequestedApplications = new List<RequestedApplication>();
+            foreach (var app in TheApplications)
+            {
+                var CurrentApplication = new RequestedApplication();
+                CurrentApplication.Outcome = "None";
+                CurrentApplication.ApplicationId = app.Id;
+                CurrentApplication.CurrentApplication = app;
+                var FoundAccount = TheAccounts.Find(a => a.ApplicationId == app.Id);
+                if (FoundAccount != null)
+                {
+                    CurrentApplication.CurrentAccount = FoundAccount;
+                    CurrentApplication.AccountId = FoundAccount.Id;
+                    CurrentApplication.Outcome = "Keep";
+                }
+                if (TheMatchingAccounts.Count > 0)
+                {
+                    var MatchedAccount = TheMatchingAccounts.Find(a => a.ApplicationId == app.Id);
+                    if (MatchedAccount != null)
+                    {
+                        CurrentApplication.MatchedAccount = MatchedAccount;
+                        CurrentApplication.MatchedAccountId = MatchedAccount.Id;
+                    }
+                }
+                // Going to wait until next page to take care of groups
+                RequestedApplications.Add(CurrentApplication);
+            }
+            requestflow.RequestedApplications = RequestedApplications;
             return View(requestflow);
         }
 
@@ -166,6 +200,7 @@ namespace PedalBus.Controllers
             if (ModelState.IsValid)
             {
                 requestflow.FurthestStep = "ApplicationSelection";
+                // Filter based on activity
                 requestflow.LastModified = DateTime.Now;
                 db.Entry(requestflow).State = EntityState.Modified;
                 db.SaveChanges();

@@ -1,0 +1,42 @@
+@model PedalBus.Models.RequestFlow
+
+@{
+    ViewBag.Title = "Application Selection";
+}
+
+<h2>Application Selection</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-vertical">
+
+        @foreach (var app in Model.RequestedApplications)
+        {
+            <div class="control-group">
+                @Html.Label(app.ApplicationId.ToString(), app.CurrentApplication.LongName)
+                <div class="controls">
+                    <input type="radio" name="@app.ApplicationId" value="Add" @((app.CurrentAccount != null) ? "disabled='disabled'" : "") />Add Access
+                    <input type="radio" name="@app.ApplicationId" value="Delete" @((app.CurrentAccount == null) ? "disabled='disabled'" : "") />Delete Access
+                    
+                </div>
+            </div>
+        }
+
+        <div class="form-actions no-color">
+            <a class="btn" href="@Url.Action("SpecialProcessing", new { id = Model.Id })">Back</a>
+            <button type="submit" value="Next" class="btn">Next</button>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
