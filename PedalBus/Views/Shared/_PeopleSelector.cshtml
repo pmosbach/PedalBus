@@ -1,8 +1,10 @@
 @model IEnumerable<PedalBus.Models.Person>
 
-@foreach (var item in Model)
-{
-    <div class="span10 offset2">
-        @Html.RadioButton("MatchingPersonId", item.Id) @item.DisplayName
-    </div>
-}
+<div class="well">
+    @foreach (var item in Model)
+    {
+        <div>
+            @Html.RadioButton("MatchingPersonId", item.Id) @item.DisplayName
+        </div>
+    }
+</div>

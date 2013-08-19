@@ -143,7 +143,33 @@ namespace PedalBus.Controllers
                 requestflow.LastModified = DateTime.Now;
                 db.Entry(requestflow).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ProfileMatching", new { id = requestflow.Id });
+                return RedirectToAction("ApplicationSelection", new { id = requestflow.Id });
+            }
+
+            return View(requestflow);
+        }
+
+        //
+        // GET: /RequestFlow/ApplicationSelection/5
+        public ActionResult ApplicationSelection(Int32 id)
+        {
+            RequestFlow requestflow = db.RequestFlows.Find(id);
+            return View(requestflow);
+        }
+
+        //
+        // POST: /RequestFlow/ApplicationSelection/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ApplicationSelection(RequestFlow requestflow)
+        {
+            if (ModelState.IsValid)
+            {
+                requestflow.FurthestStep = "ApplicationSelection";
+                requestflow.LastModified = DateTime.Now;
+                db.Entry(requestflow).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("ApplicationSelection", new { id = requestflow.Id });
             }
 
             return View(requestflow);

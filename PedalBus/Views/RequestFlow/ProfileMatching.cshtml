@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Profile Matching";
     // TODO: Delete Render calls to jqueryval and add jqueryval to the _layout page.
-    // TODO: Apparently unobtrusive javascript is needed to make the Ajax.BeginForm call work properly.
 }
 
 <h2>Profile Matching</h2>
@@ -25,8 +24,8 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     
-    <fieldset class="form-horizontal">
-        <legend>Request Flow</legend>
+    <fieldset class="form-vertical">
+        <legend>Potential Matches</legend>
         @Html.HiddenFor(model => model.Id)
 
         <div id="MatchingPersonResultList"></div>
@@ -39,6 +38,7 @@
         </div>*@
 
         <div class="form-actions no-color">
+            <a class="btn" href="@Url.Action("SpecialProcessing", new { id = Model.Id })">Back</a>
             <input type="submit" value="Next" class="btn" />
         </div>
     </fieldset>
