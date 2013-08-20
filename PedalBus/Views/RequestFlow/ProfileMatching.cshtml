@@ -23,19 +23,19 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    
+
     <fieldset class="form-vertical">
         <legend>Potential Matches</legend>
         @Html.HiddenFor(model => model.Id)
 
         <div id="MatchingPersonResultList"></div>
         @*<div class="control-group">
-            @Html.LabelFor(model => model.MatchingPersonId, new { @class = "control-label" })
-            <div class="controls">
-                @Html.EditorFor(model => model.MatchingPersonId)
-                @Html.ValidationMessageFor(model => model.MatchingPersonId, null, new { @class = "help-inline" })
-            </div>
-        </div>*@
+                @Html.LabelFor(model => model.MatchingPersonId, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.MatchingPersonId)
+                    @Html.ValidationMessageFor(model => model.MatchingPersonId, null, new { @class = "help-inline" })
+                </div>
+            </div>*@
 
         <div class="form-actions no-color">
             <a class="btn" href="@Url.Action("SpecialProcessing", new { id = Model.Id })">Back</a>

@@ -13,6 +13,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset class="form-vertical">
+        @Html.HiddenFor(model => model.Id)
 
         <div class="control-group">
             @Html.LabelFor(model => model.RequestPrivileged, new { @class = "control-label" })

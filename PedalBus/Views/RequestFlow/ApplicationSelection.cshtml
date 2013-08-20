@@ -12,15 +12,18 @@
     @Html.ValidationSummary(true)
 
     <fieldset class="form-vertical">
+        @Html.HiddenFor(model => model.Id)
 
         @foreach (var app in Model.RequestedApplications)
         {
             <div class="control-group">
                 @Html.Label(app.ApplicationId.ToString(), app.CurrentApplication.LongName)
                 <div class="controls">
-                    <input type="radio" name="@app.ApplicationId" value="Add" @((app.CurrentAccount != null) ? "disabled='disabled'" : "") />Add Access
-                    <input type="radio" name="@app.ApplicationId" value="Delete" @((app.CurrentAccount == null) ? "disabled='disabled'" : "") />Delete Access
-                    
+                    <input type="radio" name="@app.ApplicationId" value="Add" @(app.CurrentAccount != null ? "disabled='disabled'" : "") />Add New Access
+                    <input type="radio" name="@app.ApplicationId" value="Delete" @(app.CurrentAccount == null ? "disabled='disabled'" : "") />Delete Existing Access
+                    <input type="radio" name="@app.ApplicationId" value="Modify" @(app.CurrentAccount == null ? "disabled='disabled'" : "") />Modify Existing Access
+                    <input type="radio" name="@app.ApplicationId" value="Keep" @(app.CurrentAccount == null ? "disabled='disabled'" : "checked") />Keep Existing Access
+                    <input type="radio" name="@app.ApplicationId" value="N/A" @(app.CurrentAccount != null ? "disabled='disabled'" : "checked") />N/A
                 </div>
             </div>
         }

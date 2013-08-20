@@ -109,11 +109,15 @@ namespace PedalBus.Controllers
         {
             if (ModelState.IsValid)
             {
-                requestflow.FurthestStep = "SpecialProcessing";
-                requestflow.LastModified = DateTime.Now;
-                db.Entry(requestflow).State = EntityState.Modified;
+                RequestFlow currentRequestFlow = db.RequestFlows.Find(requestflow.Id);
+                currentRequestFlow.FurthestStep = "SpecialProcessing";
+                currentRequestFlow.RequestPrivileged = requestflow.RequestPrivileged;
+                currentRequestFlow.ChangedEmployer = requestflow.ChangedEmployer;
+                currentRequestFlow.ChangedName = requestflow.ChangedName;
+                currentRequestFlow.LastModified = DateTime.Now;
+                db.Entry(currentRequestFlow).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ProfileMatching", new { id = requestflow.Id });
+                return RedirectToAction("ProfileMatching", new { id = currentRequestFlow.Id });
             }
 
             return View(requestflow);
@@ -139,11 +143,14 @@ namespace PedalBus.Controllers
         {
             if (ModelState.IsValid)
             {
-                requestflow.FurthestStep = "ProfileMatching";
-                requestflow.LastModified = DateTime.Now;
-                db.Entry(requestflow).State = EntityState.Modified;
+                RequestFlow currentRequestFlow = db.RequestFlows.Find(requestflow.Id);
+
+                currentRequestFlow.FurthestStep = "ProfileMatching";
+                if (requestflow.MatchingPersonId != -1) currentRequestFlow.MatchingPersonId = requestflow.MatchingPersonId;
+                currentRequestFlow.LastModified = DateTime.Now;
+                db.Entry(currentRequestFlow).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("ApplicationSelection", new { id = requestflow.Id });
+                return RedirectToAction("ApplicationSelection", new { id = currentRequestFlow.Id });
             }
 
             return View(requestflow);
